@@ -1,10 +1,42 @@
-## To run your app on iOS:
-   cd C:\Users\Kaza\Documents\mercury\MercdevTestNative\MercdevTestNative
-   react-native run-ios
-   - or -
-   Open ios\MercdevTestNative.xcodeproj in Xcode
-   Hit the Run button
-## To run your app on Android:
-   cd C:\Users\Kaza\Documents\mercury\MercdevTestNative\MercdevTestNative
-   Have an Android emulator running (quickest way to get started), or a device connected
+# Чтобы запустить приложение на Android:
+
+* Скопировать репозиторий
+```
+git clone https://github.com/kaza980/MercdevTestNative.git
+```
+* Открыть папку с проектом
+```
+cd ./MercdevTestNative
+```
+* Установить зависимости
+```
+npm install
+```
+
+## Запуск на эмуляторе:
+
+   * Запустить проект
+   Убедитесь, что эмулятор подключен и введите команду:
+  ```
    react-native run-android
+   ```
+   Приложение откроется в эмуляторе
+
+## Запуск на устройстве:
+  * Включите режим разработчика на телефоне
+  * Подсоедините телефон к ноутбуку
+  * Настройте adb
+    Введите команду
+    ```
+    adb reverse tcp:8081 tcp:8081
+    ```
+    Если путь к adb не указан в переменной PATH, укажите его, либо предварительно перейдите в папку с adb. По умолчанию они находится по следующему пути:
+    ```
+    C:\Users\UserName\AppData\Local\Android\Sdk\platform-tools
+    ```
+  * Запустите проект
+  ```
+  react-native run-android
+  ```
+  Приложение откроется на устройстве
+     
