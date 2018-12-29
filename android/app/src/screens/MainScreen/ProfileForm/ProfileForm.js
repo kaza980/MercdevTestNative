@@ -19,7 +19,7 @@ export default class ProfileForm extends React.Component {
         <View style={styles.profileForm__avatar}>
           <Image
             style={styles.avatar__image}
-            source={{uri:"https://api.adorable.io/avatars/285/abott@adorable.png"}}
+            source={{uri: this.props.user.photoUrl}}
           />
         </View>
         <View style={styles.profileForm__nickname}>
@@ -43,7 +43,9 @@ const styles = StyleSheet.create({
     marginBottom: 24
   },
   avatar__image: {
-    borderRadius: 50
+    borderRadius: 50,
+    width: 86,
+    height: 86
   },
   nickname__text: {
     textAlign: "center",
