@@ -8,7 +8,7 @@
 
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
-import MainScreen from "./android/app/src/screens/MainScreen/MainScreen.js";
+import MainScreen from "./src/screens/MainScreen/MainScreen.js";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
