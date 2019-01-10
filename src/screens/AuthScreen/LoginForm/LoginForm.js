@@ -21,6 +21,7 @@ export default class LoginForm extends React.Component {
     super(props);
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
+    this.navigateToProfile = this.navigateToProfile.bind(this);
     this.sendLoginForm = this.sendLoginForm.bind(this);
     this.state = { email: null, password: null, error: null };
   }
@@ -35,6 +36,12 @@ export default class LoginForm extends React.Component {
     this.setState({
       password: e.nativeEvent.text
     });
+  }
+
+  navigateToProfile(user) {
+    console.log("nagigateToProfile. user: " + user);
+    console.log(this.props.navigation);
+    if (user) this.props.navigation.navigate("ProfileScreen", { user: user });
   }
 
   async sendLoginForm(event) {
@@ -64,13 +71,12 @@ export default class LoginForm extends React.Component {
         console.log(error);
       } else {
         const user = content;
-        this.props.updateUser(user);
         this.setState({
           error: null,
           email: null,
           password: null
         });
-        console.log(user);
+        this.navigateToProfile(user);
       }
     } catch (err) {
       this.setState({

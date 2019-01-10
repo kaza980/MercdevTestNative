@@ -6,20 +6,28 @@ import React, { Component } from "react";
 export default class ProfileForm extends React.Component {
   constructor(props) {
     super(props);
+    this.navigateToAuth = this.navigateToAuth.bind(this);
     this.sendProfileForm = this.sendProfileForm.bind(this);
   }
 
+  navigateToAuth() {
+    this.props.navigation.navigate("AuthScreen");
+  }
+
   sendProfileForm() {
-    this.props.updateUser(null);
+    this.navigateToAuth();
   }
 
   render() {
+    console.log(this.props.user);
+    console.log(this.props.user.name);
+    console.log(this.props.user.photoUrl);
     return (
       <View>
         <View style={styles.profileForm__avatar}>
           <Image
             style={styles.avatar__image}
-            source={{uri: this.props.user.photoUrl}}
+            source={{ uri: this.props.user.photoUrl }}
           />
         </View>
         <View style={styles.profileForm__nickname}>
@@ -45,7 +53,8 @@ const styles = StyleSheet.create({
   avatar__image: {
     borderRadius: 50,
     width: 86,
-    height: 86
+    height: 86,
+    overflow: "visible"
   },
   nickname__text: {
     textAlign: "center",
