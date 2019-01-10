@@ -1,6 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TextInput;
- } from "react-native";
+import { View, Text, StyleSheet, TextInput } from "react-native";
 
 export function Input(props) {
   return (
