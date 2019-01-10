@@ -23,7 +23,7 @@ export default class MainScreen extends Component<Props> {
         source={require("../../assets/img/rectangle-2.png")}
         style={{ width: "100%", height: "100%" }}
       >
-        <View>
+        <View style={{ justifyContent: "center", alignItems: "center" }}>
           <View style={styles.appLogo}>
             <Image
               style={styles.appLogoImage}
@@ -47,9 +47,10 @@ const styles = StyleSheet.create({
     width: 182,
     height: 40,
     marginTop: 43,
-    marginBottom: 37
+    marginBottom: 37,
+    alignItems: "center"
   },
-  appLogoImage: {},
+  appLogoImage: { width: "100%", height: "100%", marginBottom: 37 },
   body: {
     backgroundColor: "pink"
   }

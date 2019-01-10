@@ -91,7 +91,11 @@ export default class LoginForm extends React.Component {
   render() {
     return (
       <View>
-        <View>
+        <View
+          style={{
+            alignItems: "center"
+          }}
+        >
           <View style={styles.loginForm}>
             <Text style={styles.loginForm__p}>Log In</Text>
           </View>

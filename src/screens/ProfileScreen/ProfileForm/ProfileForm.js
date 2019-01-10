@@ -19,11 +19,12 @@ export default class ProfileForm extends React.Component {
   }
 
   render() {
-    console.log(this.props.user);
-    console.log(this.props.user.name);
-    console.log(this.props.user.photoUrl);
     return (
-      <View>
+      <View
+        style={{
+          alignItems: "center"
+        }}
+      >
         <View style={styles.profileForm__avatar}>
           <Image
             style={styles.avatar__image}
@@ -43,7 +44,9 @@ const styles = StyleSheet.create({
   profileForm__avatar: {
     width: 86,
     height: 86,
-    //border: solid 1px #979797;
+    borderWidth: 1,
+    borderColor: "#979797",
+    borderStyle: "solid",
     borderRadius: 50
   },
   profileForm__nickname: {
